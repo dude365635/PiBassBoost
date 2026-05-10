@@ -2,7 +2,7 @@
 Description=Bluetooth speaker agent
 
 [Service]
-ExecStart=python3 speaker-agent.py
+ExecStart=python3 ~/PiBassBoost/speaker-agent.py
 
 [Install]
 WantedBy=default.target
