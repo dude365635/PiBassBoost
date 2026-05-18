@@ -1,0 +1,9 @@
+[Unit]
+Description=Starts EasyEffects on boot
+After=pipewire.service wireplumber.service bluetooth.service
+
+[Service]
+Type=exec
+ExectStart=/home/minibass/start-easyeffects.sh
+Restart=on-failure
+RestartSec=5
