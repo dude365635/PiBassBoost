@@ -1,8 +1,24 @@
 #!/usr/bin/python3
-# SPDX-License-Identifier: LGPL-2.1-or-later
+# Original Code Copyright (C) 2022 Federic Danis
+# Modifications Copyright (C) 2026 @dude365635
+#
+# This file was originally licensed under LGPLv2.1. 
+# As permitted by Section 3 of the LGPLv2.1, it has been modified 
+# and is now redistributed under the terms of the GNU General Public License v3.0.
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# PiBassBoost-relevant note: this code is hosted (at the time of writing!) at the Collabora website: https://www.collabora.com/news-and-blog/blog/2022/09/02/using-a-raspberry-pi-as-a-bluetooth-speaker-with-pipewire-wireplumber/
-# Therefore, I cannot take any credit for this code, all applause should be directed to the author, Frederic Danis. Hats off to him, this would be much harder without your brilliant tutorial and code! 
 
 import dbus
 import dbus.service
@@ -38,15 +54,13 @@ class Agent(dbus.service.Object):
 
     @dbus.service.method(AGENT_INTERFACE,
                          in_signature="os", out_signature="")
+    @dbus.service.method(AGENT_INTERFACE,
+                     in_signature="os", out_signature="")
+#Edited to accept all incoming requests, otherwie wouldnt work with Chrome OS
     def AuthorizeService(self, device, uuid):
-        # Always authorize A2DP and AVRCP connection
-        if uuid in [A2DP, AVRCP]:
-            print("AuthorizeService (%s, %s)" % (device, uuid))
-            return
-        else:
-            print("Service rejected (%s, %s)" % (device, uuid))
-        raise Rejected("Connection rejected by user")
-
+         print("AuthorizeService (%s, %s)" % (device, uuid))
+         return
+#Finsihed edit
     @dbus.service.method(AGENT_INTERFACE,
                          in_signature="", out_signature="")
     def Cancel(self):
@@ -69,17 +83,21 @@ if __name__ == '__main__':
                              "org.freedesktop.DBus.Properties")
     adapter.Set("org.bluez.Adapter1", "DiscoverableTimeout", dbus.UInt32(0))
     adapter.Set("org.bluez.Adapter1", "Discoverable", True)
-
-    print("RPi speaker discoverable")
+#Edited below to add more adapters and an alias 
+adapter.Set("org.bluez.Adapter1", "Pairable", True)
+adapter.Set("org.bluez.Adapter1", "PairableTimeout", dbus.UInt32(0))
+adapter.Set("org.bluez.Adapter1", "Alias", "PiBassBoost")
+#Finished edit
+print("RPi speaker discoverable")
 
     # As the RPi speaker will not have any interface, create a pairing
     # agent with NoInputNoOutput capability
-    obj = bus.get_object(BUS_NAME, "/org/bluez")
-    manager = dbus.Interface(obj, "org.bluez.AgentManager1")
-    manager.RegisterAgent(AGENT_PATH, "NoInputNoOutput")
+obj = bus.get_object(BUS_NAME, "/org/bluez")
+manager = dbus.Interface(obj, "org.bluez.AgentManager1")
+manager.RegisterAgent(AGENT_PATH, "NoInputNoOutput")
 
-    print("Agent registered")
+print("Agent registered")
 
-    manager.RequestDefaultAgent(AGENT_PATH)
+manager.RequestDefaultAgent(AGENT_PATH)
 
-    mainloop.run()
+mainloop.run()
