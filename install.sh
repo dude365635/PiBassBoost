@@ -16,9 +16,6 @@
 
 echo "Installing PiBassBoost! Depending on your Pi, this could take a while, maybe treat yourself to a cold drink while you wait :-)"
 sleep 3
-echo "Creating a directory to use for the install..."
-mkdir PiBassBoost
-cd PiBassBoost
 echo "Running an APT update/upgrade"
 sudo apt update && sudo apt upgrade -y
 echo "Install prerequisite packages via APT"
