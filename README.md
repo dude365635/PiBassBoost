@@ -1,6 +1,12 @@
 # PiBassBoost
 A set of simple scripts to turn your Raspberry Pi into a headless, appliance-like bass boosting machine!!
 
+# How did you come up with this?? 
+Around a year ago I found myself listening to my Spotify playlist and thinking: "Man, this could _really_ use more bass". So I started researching, and found there were no devices on the internet (or even projects!!) that would allow you to have a portable, easy to use, reliable, and cheap bass-boosting setup. Sure, there was a multitude of software that could do the job for 'free', but the majority of these applications either were locked behind paywalls, riddled with ads, or (more often) just didn't do a good job. I gave up hope, all was lost. Until one fateful day months later, when I discovered EasyEffects while working on another Pi project. I tried it out and it worked really well! It was even a FOSS project, and there were plenty of community presets avaliable for download. I settled on JackHack's 'Bass Boosted" preset, which worked wonders on 95% of the songs I tried it on. However, there was a caveat. Most of the devices I work on use Chrome OS and Android, which don't support EasyEffects. I had to get a solution, and it had to be long-lasting, easy to use (lest it would collect dust), be relativly cheap, and compact. After a few weeks of research, testing, prototyping, 3D printing, and writing, I am proud to present this Github repo, and I hope you have as much fun building and using this as I did!
+
+# How it works
+To make it easy to understand I have made a diagram. (which is not done yet lol)
+
 # Install
 Installation is super simple, I've worked hard to create an AIO (all in one) install script to do most of the heavy lifting for you!
 
@@ -16,12 +22,6 @@ git clone https://github.com/dude363635/PiBassBoost.git
 cd PiBassBoost
 sudo chmod +x install.sh
 ```
-# How did you come up with this?? 
-Around a year ago I found myself listening to my Spotify playlist and thinking: "Man, this could _really_ use more bass". So I started researching, and found there were no devices on the internet (or even projects!!) that would allow you to have a portable, easy to use, reliable, and cheap bass-boosting setup. Sure, there was a multitude of software that could do the job for 'free', but the majority of these applications either were locked behind paywalls, riddled with ads, or (more often) just didn't do a good job. I gave up hope, all was lost. Until one fateful day months later, when I discovered EasyEffects while working on another Pi project. I tried it out and it worked really well! It was even a FOSS project, and there were plenty of community presets avaliable for download. I settled on JackHack's 'Bass Boosted" preset, which worked wonders on 95% of the songs I tried it on. However, there was a caveat. Most of the devices I work on use Chrome OS and Android, which don't support EasyEffects. I had to get a solution, and it had to be long-lasting, easy to use (lest it would collect dust), be relativly cheap, and compact. After a few weeks of research, testing, prototyping, 3D printing, and writing, I am proud to present this Github repo, and I hope you have as much fun building and using this as I did!
-
-# How it works
-To make it easy to understand I have made a diagram.
-
 
 # Bluetooth Portable Edition Build Instructions
 You could setup your PiBassBoost without a case, but why would you? You wanna bring this thing with you everywhere! I'm talking the gym, work, school, uni, anywhere you wanna vibe out! Flex it on your friends, or build one for them!
