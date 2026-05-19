@@ -17,8 +17,8 @@ cd PiBassBoost
 sudo chmod +x install.sh
 ```
 
-# Build Instructions
-You could set your PiBassBoost up without a case and use it aroudn the house, but why would you? You want to bing this thing to the gym, to your workplace, to school, uni, or anywhere you wanna vibe with your bass-boosted tunes! 
+# PiBassBoost Bluetooth Portable Edition (PBBBTPE) Build Instructions
+You could setup your PiBassBoost without a case, but why would you? You wanna bring this thing with you everywhere! I'm talking the gym, work, school, uni, or anywhere you wanna vibe out! Flex it on your friends, or build one for them!
 
 ## Parts list: 
 * Pi Zero 2W
@@ -28,3 +28,6 @@ You could set your PiBassBoost up without a case and use it aroudn the house, bu
 * 3D Printer with PETG filament
 * Soldering iron
 * Some wires (Make sure they arent too small, they can cause overcurrent fires)
+* A bit of time
+* A playlist with some good bass
+* Bluetooth headset/earbuds
