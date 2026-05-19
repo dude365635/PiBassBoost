@@ -17,17 +17,19 @@ cd PiBassBoost
 sudo chmod +x install.sh
 ```
 
-# PiBassBoost Bluetooth Portable Edition (PBBBTPE) Build Instructions
-You could setup your PiBassBoost without a case, but why would you? You wanna bring this thing with you everywhere! I'm talking the gym, work, school, uni, or anywhere you wanna vibe out! Flex it on your friends, or build one for them!
+# Bluetooth Portable Edition Build Instructions
+You could setup your PiBassBoost without a case, but why would you? You wanna bring this thing with you everywhere! I'm talking the gym, work, school, uni, anywhere you wanna vibe out! Flex it on your friends, or build one for them!
 
-## Parts list: 
+## Parts you need: 
 * Pi Zero 2W
 * 16GB Micro SD card
-* 5000mah Lipo (Size: 955565)
+* 5000mah Lipo (Size: 955565) (You cna find them on Aliexpress, eBay etc, or in small power banks like I did)
 * Charge/Boost unit with USB-C charging and percentage (Non-affiliate link: https://www.aliexpress.com/item/1005006901990636.html)
+* Some wires (Make sure they arent too small, they can cause overcurrent fires)
+## Tools you need:
 * 3D Printer with PETG filament
 * Soldering iron
-* Some wires (Make sure they arent too small, they can cause overcurrent fires)
+* Bluetooth headset/earbuds
+## Things you'll find helpful:
 * A bit of time
 * A playlist with some good bass
-* Bluetooth headset/earbuds
