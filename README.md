@@ -20,7 +20,7 @@ sudo chmod +x install.sh
 # Bluetooth Portable Edition Build Instructions
 You could setup your PiBassBoost without a case, but why would you? You wanna bring this thing with you everywhere! I'm talking the gym, work, school, uni, anywhere you wanna vibe out! Flex it on your friends, or build one for them!
 
-###Note: These instructions assume that you have at least a basic knowledge of how to image a SD card for your Pi and customise it using RPI Imager. It also assumes you understand how to solder safely and understand the small (but still potential) risks involved in this project. I take NO responsibility or liability for any consequences you experience in the event you break something whilst following these instructions. With that out of the way, enjoy the guide :)
+### Note: These instructions assume that you have at least a basic knowledge of how to image a SD card for your Pi and customise it using RPI Imager. It also assumes you understand how to solder safely and understand the small (but still potential) risks involved in this project. I take NO responsibility or liability for any consequences you experience in the event you break something whilst following these instructions. With that out of the way, enjoy the guide :)
 
 ### Parts you need: 
 * Pi Zero 2W  
