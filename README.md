@@ -16,11 +16,17 @@ git clone https://github.com/dude363635/PiBassBoost.git
 cd PiBassBoost
 sudo chmod +x install.sh
 ```
+# How did you come up with this?? 
+Around a year ago I found myself listening to my Spotify playlist and thinking: "Man, this could _really_ use more bass". So I started researching, and found there were no devices on the internet (or even projects!!) that would allow you to have a portable, easy to use, reliable, and cheap bass-boosting setup. Sure, there was a multitude of software that could do the job for 'free', but the majority of these applications either were locked behind paywalls, riddled with ads, or (more often) just didn't do a good job. I gave up hope, all was lost. Until one fateful day months later, when I discovered EasyEffects while working on another Pi project. I tried it out and it worked really well! It was even a FOSS project, and there were plenty of community presets avaliable for download. I settled on JackHack's 'Bass Boosted" preset, which worked wonders on 95% of the songs I tried it on. However, there was a caveat. Most of the devices I work on use Chrome OS and Android, which don't support EasyEffects. I had to get a solution, and it had to be long-lasting, easy to use (lest it would collect dust), be relativly cheap, and compact. After a few weeks of research, testing, prototyping, 3D printing, and writing, I am proud to present this Github repo, and I hope you have as much fun building and using this as I did!
+
+# How it works
+To make it easy to understand I have made a diagram.
+
 
 # Bluetooth Portable Edition Build Instructions
 You could setup your PiBassBoost without a case, but why would you? You wanna bring this thing with you everywhere! I'm talking the gym, work, school, uni, anywhere you wanna vibe out! Flex it on your friends, or build one for them!
 
-### Note: These instructions assume that you have at least a basic knowledge of how to image a SD card for your Pi and customise it using RPI Imager. It also assumes you understand how to solder safely and understand the small (but still potential) risks involved in this project. I take NO responsibility or liability for any consequences you experience in the event you break something whilst following these instructions. With that out of the way, enjoy the guide :)
+### Note: These instructions assume that you have at least a basic knowledge of how to image a SD card, customise it using RPI Imager, and connect to it via SSH. It also assumes you understand how to solder safely and understand the small (but still potential) risks involved in this project. I take NO responsibility or liability for any consequences you experience in the event you break something whilst following these instructions. With that out of the way, enjoy the guide :)
 
 ### Parts you need: 
 * Pi Zero 2W  
@@ -38,4 +44,12 @@ You could setup your PiBassBoost without a case, but why would you? You wanna br
 * A playlist with some good bass
 
 ## Step 1: Preparing the software image
-So firstly, we need to get the software down before we start building the hardware. Start by getting your SD card flashed with a copy of Raspberry Pi OS Bookworm, with a desktop. Make sure to use the Raspberry Pi Imager utility to enable SSH, set up a user, and connect it to a Wifi network. There is a guide avaliable here: 
+So firstly, we need to get the software down before we start building the hardware. Start by getting your SD card flashed with a copy of Raspberry Pi OS Legacy (Bookworm), with a desktop. Make sure to use the Raspberry Pi Imager utility to enable SSH, set up a user, and connect it to a Wifi network. 
+Next, login to the user you created through an ssh session
+On Linux, the command is:
+```bash
+ssh user@hostname/ip address
+```
+Then use the install instructions listed above to download, install, and configure your Pi, then move onto the next step.
+
+## Step 2: 
