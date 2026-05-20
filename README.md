@@ -59,6 +59,6 @@ Then use the basc install instructions above to download, install, and configure
 This is a super simple process, and can be done whilst the main software is being set up. You will need another computer to set it up, as the install script does not currently support flashing the Pico live. 
 For up to date instructions, visit the install page on wasdwasd0105's repo: https://github.com/wasdwasd0105/PicoW-usb2bt-audio?tab=readme-ov-file#installation
 
-## Step 3: Print the housing and place the parts 
+## Step 3: Print the housing and test fit parts 
 Now that you have all the software ready, its time to move onto the hardware side of things. if you have the same parts as me, grab the STL files you'll need from the "STL" folder in the repo (LINK HERE). I reccomend printing them all in PETG for better heat-resistance, however PLA might work. 
 Once the parts have printed, gently place everything together and test fit it all before we start soldering things.
