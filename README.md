@@ -2,12 +2,12 @@
 A set of simple scripts to turn your Raspberry Pi into a headless, appliance-like bass boosting machine!!
 
 # How did you come up with this?? 
-Around a year ago I found myself listening to my Spotify playlist and thinking: "Man, this could _really_ use more bass". So I started researching, and found there were no devices on the internet (or even projects!!) that would allow you to have a portable, easy to use, reliable, and cheap bass-boosting setup. Sure, there was a multitude of software that could do the job for 'free', but the majority of these applications either were locked behind paywalls, riddled with ads, or (more often) just didn't do a good job. I gave up hope, all was lost. Until one fateful day months later, when I discovered EasyEffects while working on another Pi project. I tried it out and it worked really well! It was even a FOSS project, and there were plenty of community presets avaliable for download. I settled on JackHack's 'Bass Boosted" preset, which worked wonders on 95% of the songs I tried it on. However, there was a caveat. Most of the devices I work on use Chrome OS and Android, which don't support EasyEffects. I had to get a solution, and it had to be long-lasting, easy to use (lest it would collect dust), be relativly cheap, and compact. After a few weeks of research, testing, prototyping, 3D printing, and writing, I am proud to present this Github repo, and I hope you have as much fun building and using this as I did!
+Around a year ago I found myself listening to my Spotify playlist and thinking: "Man, this could _really_ use more bass". So I started researching, and found there were no devices on the internet (or even projects!!) that would allow you to have a portable, easy to use, reliable, and cheap bass-boosting setup. Sure, there was a multitude of software that could do the job for 'free', but the majority of these applications either were locked behind paywalls, riddled with ads, or (more often) just didn't do a good job. I gave up hope, all was lost. Until one fateful day months later, when I discovered a program called EasyEffects. I tried it out and it worked really well! It was a FOSS project, and there were plenty of community presets avaliable for download. I liked JackHack's 'Bass Boosted" preset, which worked wonders on 95% of the songs I tried it on. However, there was a caveat. Most devices I use run on Chrome OS and Android, which don't support EasyEffects. I wanted a solution, and it had to be reliable, easy to use (lest it collect dust), relativly cheap, and compact. After a few weeks of research, testing, prototyping, 3D printing, and writing, I am proud to present my hard work to you all!
 
 # How it works
 To make it easy to understand I have made a diagram. (which is not done yet lol)
 
-# Install
+# Basic Installation
 Installation is super simple, I've worked hard to create an AIO (all in one) install script to do most of the heavy lifting for you!
 
 The install script requires the following:
@@ -34,6 +34,9 @@ You could setup your PiBassBoost without a case, but why would you? You wanna br
 * 5000mah Lipo (Size: 955565) (You can find them on Aliexpress, eBay etc, or in small power banks like I did)
 * Charge/Boost unit with USB-C charging and percentage (Non-affiliate link: https://www.aliexpress.com/item/1005006901990636.html)
 * A Pico W or Pico 2W (acts as a USB audio device for connecting your Bluetooth headphones or earbuds)
+* Micro USB to Micro USB OTG with right angles (as used in DJI drones, for example) (Non-affiliate link: https://www.aliexpress.com/item/32829411837.html
+* Some momentary pushbuttons
+* BOLTS+NUTS<ADD INFO> 
 * Some wires (Make sure they aren't too small, they can cause overcurrent fires)
 ### Tools you need:
 * 3D Printer with PETG filament
@@ -50,6 +53,10 @@ On Linux, the command is:
 ```bash
 ssh user@hostname/ip address
 ```
-Then use the install instructions listed above to download, install, and configure your Pi, then move onto the next step.
+Then use the basc install instructions above to download, install, and configure your Pi, then move onto the next step.
 
-## Step 2: 
+## Step 2: Print the housing and place the parts 
+Now that you have all the software ready, its time to move onto the hardware side of things. if you have the same parts as me, grab the STL files you'll need from the "STL" folder in the repo (LINK HERE). I reccomend printing them all in PETG for better heat-resistance, however PLA might work. 
+Once the parts have printed, gently place everything together and test fit it all before we start soldering things.
+
+## Step 3: ehhh not done yet
