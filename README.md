@@ -37,9 +37,9 @@ You could setup your PiBassBoost without a case, but why would you? You wanna br
 * Micro USB to Micro USB OTG with right angles (as used in DJI drones, for example) (Non-affiliate link: https://www.aliexpress.com/item/32829411837.html
 * Some momentary pushbuttons
 * BOLTS+NUTS<ADD INFO> 
-* Some wires (Make sure they aren't too small, they can cause overcurrent fires)
+* Various wires (Small, but not too small, they can cause overcurrent fires)
 ### Tools you need:
-* 3D Printer with PETG filament
+* Access to a 3D Printer
 * Soldering iron
 * Bluetooth headset/earbuds
 ### Things you'll find helpful:
