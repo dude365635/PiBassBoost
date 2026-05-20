@@ -46,7 +46,7 @@ You could setup your PiBassBoost without a case, but why would you? You wanna br
 * A bit of time
 * A playlist with some good bass
 
-## Step 1: Preparing the software image
+## Step 1: Preparing the software on the Pi
 So firstly, we need to get the software down before we start building the hardware. Start by getting your SD card flashed with a copy of Raspberry Pi OS Legacy (Bookworm), with a desktop. Make sure to use the Raspberry Pi Imager utility to enable SSH, set up a user, and connect it to a Wifi network. 
 Next, login to the user you created through an ssh session
 On Linux, the command is:
@@ -55,8 +55,10 @@ ssh user@hostname/ip address
 ```
 Then use the basc install instructions above to download, install, and configure your Pi, then move onto the next step.
 
-## Step 2: Print the housing and place the parts 
+## Step 2: Set up Pico W as a Bluetooth device
+This is a super simple process, and can be done whilst the main software is being set up. You will need another computer to set it up, as the install script does not currently support flashing the Pico live. 
+For up to date instructions, visit the install page on wasdwasd0105's repo: https://github.com/wasdwasd0105/PicoW-usb2bt-audio?tab=readme-ov-file#installation
+
+## Step 3: Print the housing and place the parts 
 Now that you have all the software ready, its time to move onto the hardware side of things. if you have the same parts as me, grab the STL files you'll need from the "STL" folder in the repo (LINK HERE). I reccomend printing them all in PETG for better heat-resistance, however PLA might work. 
 Once the parts have printed, gently place everything together and test fit it all before we start soldering things.
-
-## Step 3: ehhh not done yet
