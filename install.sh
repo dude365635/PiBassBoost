@@ -57,6 +57,8 @@ cat >> ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc << 
 [General]
 enableLocalServer=true
 EOF
+echo "Enabling read-only filesystem to avoid data corruption"
+scripts/read-only-fs.sh
 echo "Setup complete! System will reboot in 10 seconds, once rebooted connect to PiBassBoost via Bluetooth to start Bass Boosting!!"
 sleep 5
 sudo reboot
