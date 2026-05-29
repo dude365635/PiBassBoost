@@ -24,42 +24,4 @@ sudo chmod +x install.sh
 sudo ./install.sh
 ```
 
-# Advanced Portable Edition (Build Instructions)
-You could setup your PiBassBoost without a case, but why would you? You wanna bring this thing with you everywhere! I'm talking the gym, work, school, uni, anywhere you wanna vibe out! Flex it on your friends, or build one for them!
-
-### Note: These instructions assume that you have at least a basic knowledge of how to image a SD card, customise it using RPI Imager, and connect to it via SSH. It also assumes you understand how to solder safely and understand the small (but still potential) risks involved in this project. I take NO responsibility or liability for any consequences you experience in the event you break something whilst following these instructions. With that out of the way, enjoy the guide :)
-
-### Parts you need: 
-* Pi Zero 2W  
-* 16GB Micro SD card  
-* 5000mah Lipo (Size: 955565) (You can find them on Aliexpress, eBay etc, or in small power banks like I did)
-* Charge/Boost unit with USB-C charging and percentage (Non-affiliate link: https://www.aliexpress.com/item/1005006901990636.html)
-* A Pico W or Pico 2W (acts as a USB audio device for connecting your Bluetooth headphones or earbuds)
-* Micro USB to Micro USB OTG with right angles (as used in DJI drones, for example) (Non-affiliate link: https://www.aliexpress.com/item/32829411837.html
-* Some momentary pushbuttons
-* BOLTS+NUTS<ADD INFO> 
-* Various wires (Small, but not too small, they can cause overcurrent fires)
-### Tools you need:
-* Access to a 3D Printer (or 3D printing service, PCBWay, JLCPCB, etc)
-* Soldering iron
-* Bluetooth headset/earbuds
-### Things you'll find helpful:
-* A bit of time
-* A playlist with some good bass
-
-## Step 1: Preparing the software on the Pi
-So firstly, we need to get the software down before we start building the hardware. Start by getting your SD card flashed with a copy of Raspberry Pi OS Legacy (Bookworm), with a desktop. Make sure to use the Raspberry Pi Imager utility to enable SSH, set up a user, and connect it to a Wifi network. 
-Next, login to the user you created through an ssh session
-On Linux, the command is:
-```bash
-ssh user@hostname/ip address
-```
-Then use the basc install instructions above to download, install, and configure your Pi, then move onto the next step.
-
-## Step 2: Set up Pico W as a Bluetooth device
-This is a super simple process, and can be done whilst the main software is being set up. You will need another computer to set it up, as the install script does not currently support flashing the Pico live. 
-For up to date instructions, visit the install page on wasdwasd0105's repo: https://github.com/wasdwasd0105/PicoW-usb2bt-audio?tab=readme-ov-file#installation
-
-## Step 3: Print the housing and test fit parts 
-Now that you have all the software ready, its time to move onto the hardware side of things. if you have the same parts as me, grab the STL files you'll need from the "STL" folder in the repo (LINK HERE). I reccomend printing them all in PETG for better heat-resistance, however PLA might work. 
-Once the parts have printed, gently place everything together and test fit it all before we start soldering things.
+For a mroe advanced and useful Portable Edition, see the wiki page here:
