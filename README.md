@@ -21,6 +21,7 @@ With that done, just clone the repo, move into it and run the script:
 git clone https://github.com/dude363635/PiBassBoost.git
 cd PiBassBoost
 sudo chmod +x install.sh
+sudo ./install.sh
 ```
 
 # Advanced Portable Edition (Build Instructions)
