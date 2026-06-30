@@ -24,4 +24,4 @@ sudo chmod +x install.sh
 sudo ./install.sh
 ```
 
-For a mroe advanced and useful Portable Edition, see the wiki page here:
+For a more advanced and useful Portable Edition, see the wiki page here:
