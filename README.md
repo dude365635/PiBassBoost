@@ -16,7 +16,7 @@ The install script requires the following:
 * A Raspberry Pi with built-in Bluetooth (This excludes the Pi Zero W due to lack of processing power)
 * OPTIONAL: If using a Pi without a headphone jack (Zero or 5 models) you will need some form of USB audio output device, I've used a Pico progammed as a BT audio device using wasdwasd0105's amazing project: https://github.com/wasdwasd0105/PicoW-usb2bt-audio)
 
-With that done, just clone the repo, move into it and run the script:
+To install, just clone the repo, move into it and run the script:
 ```bash
 git clone https://github.com/dude363635/PiBassBoost.git
 cd PiBassBoost
