@@ -27,10 +27,11 @@ sudo chmod +x zram.sh
 sudo ./zram.sh
 echo "Setting up the host Bluetooth interface"
 sleep 1
-echo "Creating a systemd user srrvice file"
+echo "Creating a systemd user service file"
 mkdir -p .config/systemd/user
 cp scripts/speaker-agent.service .config/systemd/user/speaker-agent.service
 echo "Enabling the Bluetooth host service"
+systemctl --user daemon-reload
 systemctl --user enable speaker-agent.service
 echo "Enabling support for repairing without interaction"
 sudo sed -i 's/#JustWorksRepairing.*/JustWorksRepairing = always/' /etc/bluetooth/main.conf
@@ -48,6 +49,7 @@ scripts/profiles.sh
 echo "Copying and activating EasyEffects script and systemd service file"
 cp scripts/start-easyeffects.sh ~/
 cp scripts/start-easyeffects.service .config/systemd/user/start-easyeffects.service
+systemctl --user daemon-reload
 systemctl --user enable start-easyeffects.service
 echo "Enabling lingering to ensure all the startup scripts can run"
 sudo loginctl enable-linger $USER
@@ -57,6 +59,11 @@ cat >> ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc << 
 [General]
 enableLocalServer=true
 EOF
+echo "Adding optional button support"
+cp scripts/dsp_buttons.py ~/dsp_buttons.py
+cp scripts/dsp_buttons.service ~/.config/systemd/user/dsp-buttons.service
+systemctl --user daemon-reload
+systemctl --user enable dsp-buttons.service
 echo "Enabling read-only filesystem to avoid data corruption"
 scripts/read-only-fs.sh
 echo "Setup complete! System will reboot in 10 seconds, once rebooted connect to PiBassBoost via Bluetooth to start Bass Boosting!!"
