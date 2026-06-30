@@ -11,7 +11,7 @@ To make it easy to understand I have made a diagram. (which is not done yet lol)
 Installation is super simple, I've worked hard to create an AIO (all in one) install script to do most of the heavy lifting for you!
 
 The install script requires the following:
-* An installation of Pi OS Desktop 64bit (Preferably Bookworm, Trixie may work but haven't tried)
+* An installation of Pi OS Desktop 64bit (Use Bookworm, Trixie may have issues)
 * 16GB micro SD card or bigger
 * A Raspberry Pi with built-in Bluetooth (This excludes the Pi Zero W due to lack of processing power)
 * OPTIONAL: If using a Pi without a headphone jack (Zero or 5 models) you will need some form of USB audio output device, I've used a Pico progammed as a BT audio device using wasdwasd0105's amazing project: https://github.com/wasdwasd0105/PicoW-usb2bt-audio)
