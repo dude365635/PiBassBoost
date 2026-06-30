@@ -1,0 +1,12 @@
+[Unit]
+Description=EasyEffects GPIO Button Listener
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 ~/dsp_buttons.py
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
