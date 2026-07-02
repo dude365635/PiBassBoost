@@ -4,7 +4,7 @@ Requires=start-easyeffects.service
 After=start-easyeffects.service
 
 [Service]
-ExecStart=python3 ~/speaker-agent.py
+ExecStart=python3 %h/speaker-agent.py
 
 [Install]
 WantedBy=default.target
