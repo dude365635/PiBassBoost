@@ -4,6 +4,6 @@ After=pipewire.service wireplumber.service
 
 [Service]
 Type=exec
-ExecStart=/home/minibass/start-easyeffects.sh
+ExecStart=~/start-easyeffects.sh
 Restart=on-failure
 RestartSec=5
