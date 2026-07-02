@@ -18,7 +18,7 @@
 echo "Installing PiBassBoost! Depending on your Pi, this could take a while, maybe treat yourself to a cold drink while you wait :-)"
 sleep 3
 echo "Running an APT update/upgrade"
-sudo apt update && sudo apt upgrade -y
+sudo apt update -y && sudo apt upgrade -y
 echo "Install prerequisite packages via APT"
 sudo apt install socat libxcb-sursor0 python3-dbus pipewire wireplumber libspa-0.2-bluetooth
 echo "Installing Zram using Botspot's 'More RAM' package"
