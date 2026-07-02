@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # PiBassBoost Setup Script - Turn your Pi into a bass-crunching machine!
 #   Copyright (C) 2026 @dude365635
 #
