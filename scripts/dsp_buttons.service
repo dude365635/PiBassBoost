@@ -14,8 +14,8 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 [Unit]
 Description=EasyEffects GPIO Button Listener
-After=default.target speaker-agent.service
 Requires=speaker-agent.service
+After=default.target speaker-agent.service
 
 
 [Service]
