@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
-
 echo "Starting EasyEffects on DISPLAY=:0"
-DISPLAY=:0 flatpak run com.github.wwmm.easyeffects --service-mode --load-preset="Bass Boosted"
-echo "EasyEffects Started!"
+exec env DISPLAY=:0 flatpak run com.github.wwmm.easyeffects \
+    --service-mode \
+    --load-preset="Bass Boosted"
