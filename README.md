@@ -5,7 +5,9 @@ A set of scripts to turn your Raspberry Pi into a portable bass booster using Ea
 Around a year ago I found myself listening to my Spotify playlist and thinking: "Man, this could _really_ use more bass". So I started researching, and found there were no devices on the internet (or even projects!!) that would allow you to have a portable, easy to use, reliable, and cheap bass-boosting setup. Sure, there was a multitude of software that could do the job for 'free', but the majority of these applications either were locked behind paywalls, riddled with ads, or (more often) just didn't do a good job. I gave up hope, all was lost. Until one fateful day months later, when I discovered a program called EasyEffects. I tried it out and it worked really well! It was a FOSS project, and there were plenty of community presets avaliable for download. I liked JackHack's 'Bass Boosted" preset, which worked wonders on 95% of the songs I tried it on. However, there was a caveat. Most devices I use run on Chrome OS and Android, which don't support EasyEffects. I wanted a solution, and it had to be reliable, easy to use (lest it collect dust), relativly cheap, and compact. After a few weeks of research, testing, prototyping, 3D printing, and writing, I am proud to present my hard work to you all!
 
 # How it works
-To make it easy to understand I have made a diagram. (which is not done yet lol)
+To make it easy to understand I have made a diagram:
+<img width="1920" height="1080" alt="Untitled design (3)" src="https://github.com/user-attachments/assets/f17498c5-6c5b-4d00-bc97-7795ba6bd8ec" />
+
 
 # Basic Installation
 Installation is super simple, I've worked hard to create an AIO (all in one) install script to do most of the heavy lifting for you!
