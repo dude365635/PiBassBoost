@@ -70,9 +70,9 @@ enableLocalServer=true
 EOF
 echo "Adding optional bass-boost switch support"
 cp scripts/dsp_buttons.py ~/dsp_buttons.py
-cp scripts/dsp_buttons.service ~/.config/systemd/user/dsp-buttons.service
+cp scripts/dsp_buttons.service ~/.config/systemd/user/dsp_buttons.service
 systemctl --user daemon-reload
-systemctl --user enable dsp-buttons.service
+systemctl --user enable dsp_buttons.service
 echo "Enabling read-only filesystem to avoid data corruption"
 bash scripts/read-only-fs.sh
 echo "Setup complete! System will reboot in 5 seconds, once rebooted connect to PiBassBoost via Bluetooth to start Bass Boosting!!"
