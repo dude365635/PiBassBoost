@@ -50,7 +50,7 @@ echo -e "${MAGENTA}          ██╔══██╗██║   ██║██
 echo -e "${MAGENTA}          ██████╔╝╚██████╔╝╚██████╔╝███████║   ██║${NC}"
 echo -e "${MAGENTA}          ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝   ╚═╝${NC}"
 echo
-echo -e "${WHITE}        Turn your Raspberry Pi into a bass-crunching machine! 🔊${NC}"
+echo -e "${WHITE}        Turn your Raspberry Pi into a bass-crunching machine! ${NC}"
 echo -e "${BLUE}             Copyright (C) 2026 @dude365635${NC}"
 echo
 sleep 2
