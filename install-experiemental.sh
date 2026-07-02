@@ -110,7 +110,7 @@ systemctl --user daemon-reload
 systemctl --user enable dsp_buttons.service
 
 echo -e "${GREEN}[12/12]${NC} Enabling read-only filesystem..."
-bash scripts/read-only-fs.sh
+sudo bash scripts/read-only-fs.sh
 
 clear
 
