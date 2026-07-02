@@ -13,11 +13,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-source /usr/bin/raspi-config
-INTERACTIVE=False
+set -e
 echo "Enabling OverlayFS..."
-if do_overlayfs 0; then
-    echo "Success"
-else
-    echo "Failed"
-fi
+sudo raspi-config nonint do_overlayfs 0
+echo "OverlayFS enabled."
