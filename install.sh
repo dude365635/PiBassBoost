@@ -28,7 +28,7 @@ sleep 3
 echo "Running an APT update/upgrade"
 sudo apt update && sudo apt upgrade -y
 echo "Install prerequisite packages via APT"
-sudo apt install -y socat libxcb-sursor0 python3-dbus pipewire wireplumber libspa-0.2-bluetooth rfkill
+sudo apt install -y socat libxcb-cursor0 python3-dbus pipewire wireplumber libspa-0.2-bluetooth rfkill
 echo "Installing Zram using Botspot's 'More RAM' package"
 wget -O scripts/zram.sh https://github.com/Botspot/pi-apps/raw/refs/heads/master/apps/More%20RAM/install
 sudo chmod +x scripts/zram.sh
