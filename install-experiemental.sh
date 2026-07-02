@@ -78,7 +78,7 @@ sudo sed -i 's/#JustWorksRepairing.*/JustWorksRepairing = always/' /etc/bluetoot
 
 echo -e "${GREEN}[5/12]${NC} Installing Flatpak..."
 sudo apt install -y flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo -e "${GREEN}[6/12]${NC} Installing EasyEffects..."
 flatpak install -y --noninteractive flathub com.github.wwmm.easyeffects
