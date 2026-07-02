@@ -4,6 +4,6 @@ After=pipewire.service wireplumber.service
 
 [Service]
 Type=exec
-ExecStart=%h/start-easyeffects.sh
+ExecStart=/bin/bash %h/start-easyeffects.sh
 Restart=on-failure
 RestartSec=5
