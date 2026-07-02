@@ -19,11 +19,14 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-
+import os #added this
+import time #added this
+import socket #added this
 import dbus
 import dbus.service
 import dbus.mainloop.glib
 from gi.repository import GLib
+
 
 BUS_NAME = 'org.bluez'
 AGENT_INTERFACE = 'org.bluez.Agent1'
@@ -65,9 +68,29 @@ class Agent(dbus.service.Object):
                          in_signature="", out_signature="")
     def Cancel(self):
         print("Cancel")
+        
+def wait_for_easyeffects(): # added this too...
+    socket_path = os.path.join(
+        os.environ["XDG_RUNTIME_DIR"],
+        ".flatpak/com.github.wwmm.easyeffects/tmp/EasyEffectsServer"
+    )
 
+    print("Waiting for EasyEffects...")
+
+    while True:
+        try:
+            with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
+                s.settimeout(1)
+                s.connect(socket_path)
+            break
+        except (FileNotFoundError, ConnectionRefusedError, OSError):
+            time.sleep(0.1)
+
+    print("EasyEffects is ready.") # end of the added block, this is just to make sure easyeffects has started first before starting bluetooth
 
 if __name__ == '__main__':
+    wait_for_easyeffects()
+
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
 
     bus = dbus.SystemBus()
