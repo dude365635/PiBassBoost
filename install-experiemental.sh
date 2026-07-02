@@ -97,8 +97,7 @@ echo -e "${GREEN}[9/12]${NC} Enabling startup services..."
 sudo loginctl enable-linger "$USER"
 
 echo -e "${GREEN}[10/12]${NC} Enabling EasyEffects local server..."
-mkdir -p ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects
-cat >> ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc << 'EOF'
+grep -q "^enableLocalServer=true" ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc 2>/dev/null || cat >> ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc <<EOF
 [General]
 enableLocalServer=true
 EOF
