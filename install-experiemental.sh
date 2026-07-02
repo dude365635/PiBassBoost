@@ -108,7 +108,11 @@ cp scripts/dsp_buttons.service ~/.config/systemd/user/dsp_buttons.service
 systemctl --user daemon-reload
 systemctl --user enable dsp_buttons.service
 
-echo -e "${GREEN}[12/12]${NC} Enabling read-only filesystem..."
+echo -e "${GREEN}[12/13]${NC} "Enabling autologin and switching to X11 desktop..."
+sudo raspi-config nonint do_boot_behaviour B4
+sudo raspi-config nonint do_wayland W1
+
+echo -e "${GREEN}[13/13]${NC} Enabling read-only filesystem..."
 sudo bash scripts/read-only-fs.sh
 
 clear
