@@ -77,4 +77,4 @@ curl --fail --location --silent \
 sed -i "s|<PRESETS_DIRECTORY>|$PRESETS_DIRECTORY|g" \
 "$PRESETS_DIRECTORY/output/Bass Boosted.json"
 
-echo "Done installing presets ✔"
+echo "Done installing presets"
