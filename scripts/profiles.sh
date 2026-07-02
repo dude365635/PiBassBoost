@@ -1,4 +1,4 @@
-#!/bin/bash/
+#!/bin/bash
 # Portions of this script are derived from:
 #   Original Project: EasyEffects-Presets (https://github.com/JackHack96/EasyEffects-Presets/)
 #   Copyright (c) 2018 Matteo Iervasi
@@ -47,6 +47,9 @@ check_impulse_response_directory() {
         mkdir "$PRESETS_DIRECTORY/output"
     fi
 }
+
+check_installation
+check_impulse_response_directory
 
   echo "Installing impulse response files..."
         curl "$GIT_REPOSITORY/irs/Dolby%20ATMOS%20((128K%20MP3))%201.Default.irs" --output "$PRESETS_DIRECTORY/irs/Dolby ATMOS ((128K MP3)) 1.Default.irs" --silent
