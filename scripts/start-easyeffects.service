@@ -1,6 +1,6 @@
 [Unit]
 Description=Starts EasyEffects on boot
-After=pipewire.service wireplumber.service bluetooth.service
+After=pipewire.service wireplumber.service
 
 [Service]
 Type=exec
