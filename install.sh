@@ -14,22 +14,30 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+set -euo pipefail
+
+if [[ $EUID -eq 0 ]]; then
+    echo "Please run this installer as your normal user, not as root."
+    exit 1
+fi
+
+sudo -v
 
 echo "Installing PiBassBoost! Depending on your Pi, this could take a while, maybe treat yourself to a cold drink while you wait :-)"
 sleep 3
 echo "Running an APT update/upgrade"
-sudo apt update -y && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 echo "Install prerequisite packages via APT"
-sudo apt install socat libxcb-sursor0 python3-dbus pipewire wireplumber libspa-0.2-bluetooth
+sudo apt install -y socat libxcb-sursor0 python3-dbus pipewire wireplumber libspa-0.2-bluetooth rfkill
 echo "Installing Zram using Botspot's 'More RAM' package"
 wget -O scripts/zram.sh https://github.com/Botspot/pi-apps/raw/refs/heads/master/apps/More%20RAM/install
-sudo chmod +x zram.sh
-sudo ./zram.sh
+sudo chmod +x scripts/zram.sh
+sudo scripts/zram.sh
 echo "Setting up the host Bluetooth interface"
 sleep 1
 echo "Creating a systemd user service file"
-mkdir -p .config/systemd/user
-cp scripts/speaker-agent.service .config/systemd/user/speaker-agent.service
+mkdir -p ~/.config/systemd/user
+cp scripts/speaker-agent.service ~/.config/systemd/user/speaker-agent.service
 cp scripts/speaker-agent.py ~/speaker-agent.py
 echo "Enabling the Bluetooth host service"
 systemctl --user daemon-reload
@@ -42,14 +50,14 @@ sudo apt install flatpak -y && flatpak remote-add --if-not-exists flathub https:
 #source /etc/profile
 #systemctl --user daemon-reexec
 echo "Installing EasyEffects"
-flatpak install -y flathub com.github.wwmm.easyeffects
+flatpak install -y --noninteractive flathub com.github.wwmm.easyeffects
 echo "Removing Bluetooth soft-block"
 rfkill unblock bluetooth
 echo "Installing IRS files and Bass Boost preset"
-scripts/profiles.sh
+bash scripts/profiles.sh
 echo "Copying and activating EasyEffects script and systemd service file"
 cp scripts/start-easyeffects.sh ~/start-easyeffects.sh
-cp scripts/start-easyeffects.service .config/systemd/user/start-easyeffects.service
+cp scripts/start-easyeffects.service ~/.config/systemd/user/start-easyeffects.service
 systemctl --user daemon-reload
 systemctl --user enable start-easyeffects.service
 echo "Enabling lingering to ensure all the startup scripts can run"
@@ -66,7 +74,7 @@ cp scripts/dsp_buttons.service ~/.config/systemd/user/dsp-buttons.service
 systemctl --user daemon-reload
 systemctl --user enable dsp-buttons.service
 echo "Enabling read-only filesystem to avoid data corruption"
-scripts/read-only-fs.sh
-echo "Setup complete! System will reboot in 10 seconds, once rebooted connect to PiBassBoost via Bluetooth to start Bass Boosting!!"
+bash scripts/read-only-fs.sh
+echo "Setup complete! System will reboot in 5 seconds, once rebooted connect to PiBassBoost via Bluetooth to start Bass Boosting!!"
 sleep 5
 sudo reboot
