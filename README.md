@@ -22,8 +22,8 @@ To install, just clone the repo, move into it and run the script:
 ```bash
 git clone https://github.com/dude363635/PiBassBoost.git
 cd PiBassBoost
-sudo chmod +x install.sh
-sudo ./install.sh
+chmod +x install.sh
+./install.sh
 ```
 
 **For a more advanced and useful Portable Edition, see the wiki page:** https://github.com/dude365635/PiBassBoost/wiki/Bluetooth-Portable-Edition
