@@ -15,7 +15,7 @@
 [Unit]
 Description=EasyEffects GPIO Button Listener
 Requires=speaker-agent.service
-After=default.target speaker-agent.service
+After=speaker-agent.service
 
 
 [Service]
