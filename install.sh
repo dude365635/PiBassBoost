@@ -30,6 +30,7 @@ sleep 1
 echo "Creating a systemd user service file"
 mkdir -p .config/systemd/user
 cp scripts/speaker-agent.service .config/systemd/user/speaker-agent.service
+cp scripts/speaker-agent.py ~/speaker-agent.py
 echo "Enabling the Bluetooth host service"
 systemctl --user daemon-reload
 systemctl --user enable speaker-agent.service
