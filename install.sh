@@ -33,7 +33,7 @@ cp scripts/speaker-agent.service .config/systemd/user/speaker-agent.service
 echo "Enabling the Bluetooth host service"
 systemctl --user daemon-reload
 systemctl --user enable speaker-agent.service
-echo "Enabling support for repairing without interaction"
+echo "Enabling support for re-pairing without interaction"
 sudo sed -i 's/#JustWorksRepairing.*/JustWorksRepairing = always/' /etc/bluetooth/main.conf
 echo "Installing Flaptak and adding Flathub"
 sudo apt install flatpak -y && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -47,19 +47,19 @@ rfkill unblock bluetooth
 echo "Installing IRS files and Bass Boost preset"
 scripts/profiles.sh
 echo "Copying and activating EasyEffects script and systemd service file"
-cp scripts/start-easyeffects.sh ~/
+cp scripts/start-easyeffects.sh ~/start-easyeffects.sh
 cp scripts/start-easyeffects.service .config/systemd/user/start-easyeffects.service
 systemctl --user daemon-reload
 systemctl --user enable start-easyeffects.service
 echo "Enabling lingering to ensure all the startup scripts can run"
 sudo loginctl enable-linger $USER
-echo "Enabling EasyEffect's local server for easy global bypass"
+echo "Enabling EasyEffect's local server"
 mkdir -p ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects
 cat >> ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc << 'EOF'
 [General]
 enableLocalServer=true
 EOF
-echo "Adding optional button support"
+echo "Adding optional bass-boost switch support"
 cp scripts/dsp_buttons.py ~/dsp_buttons.py
 cp scripts/dsp_buttons.service ~/.config/systemd/user/dsp-buttons.service
 systemctl --user daemon-reload
