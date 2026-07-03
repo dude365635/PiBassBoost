@@ -23,7 +23,7 @@ GIT_REPOSITORY="https://raw.githubusercontent.com/JackHack96/EasyEffects-Presets
 
 check_installation() {
     if command -v flatpak &>/dev/null && flatpak list | grep -q "com.github.wwmm.easyeffects"; then
-        PRESETS_DIRECTORY="$HOME/.var/app/com.github.wwmm.easyeffects/config/easyeffects"
+        PRESETS_DIRECTORY="$HOME/.var/app/com.github.wwmm.easyeffects/data/easyeffects"
     elif command -v easyeffects &>/dev/null; then
         PRESETS_DIRECTORY="$HOME/.config/easyeffects"
     else
