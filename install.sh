@@ -96,11 +96,11 @@ systemctl --user enable start-easyeffects.service
 echo -e "${GREEN}[9/13]${NC} Enabling startup services..."
 sudo loginctl enable-linger "$USER"
 
-echo -e "${GREEN}[10/13]${NC} Enabling EasyEffects local server..."
-grep -q "^enableLocalServer=true" ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc 2>/dev/null || cat >> ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc <<EOF
-[General]
-enableLocalServer=true
-EOF
+#echo -e "${GREEN}[10/13]${NC} Enabling EasyEffects local server..."
+#grep -q "^enableLocalServer=true" ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc 2>/dev/null || cat >> ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc <<EOF
+#[General]
+#enableLocalServer=true
+#EOF
 
 echo -e "${GREEN}[11/13]${NC} Installing DSP button support..."
 cp scripts/dsp_buttons.py ~/dsp_buttons.py
