@@ -56,18 +56,18 @@ echo
 sleep 2
 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${GREEN}[1/12]${NC} Updating system packages..."
+echo -e "${GREEN}[1/13]${NC} Updating system packages..."
 sudo apt update && sudo apt upgrade -y
 
-echo -e "${GREEN}[2/12]${NC} Installing prerequisite packages..."
+echo -e "${GREEN}[2/13]${NC} Installing prerequisite packages..."
 sudo apt install -y socat libxcb-cursor0 python3-dbus pipewire wireplumber libspa-0.2-bluetooth rfkill
 
-echo -e "${GREEN}[3/12]${NC} Installing ZRAM..."
+echo -e "${GREEN}[3/13]${NC} Installing ZRAM..."
 wget -O scripts/zram.sh https://github.com/Botspot/pi-apps/raw/refs/heads/master/apps/More%20RAM/install
 sudo chmod +x scripts/zram.sh
 sudo scripts/zram.sh
 
-echo -e "${GREEN}[4/12]${NC} Configuring Bluetooth..."
+echo -e "${GREEN}[4/13]${NC} Configuring Bluetooth..."
 sleep 1
 mkdir -p ~/.config/systemd/user
 cp scripts/speaker-agent.service ~/.config/systemd/user/speaker-agent.service
@@ -76,33 +76,33 @@ systemctl --user daemon-reload
 systemctl --user enable speaker-agent.service
 sudo sed -i 's/#JustWorksRepairing.*/JustWorksRepairing = always/' /etc/bluetooth/main.conf
 
-echo -e "${GREEN}[5/12]${NC} Installing Flatpak..."
+echo -e "${GREEN}[5/13]${NC} Installing Flatpak..."
 sudo apt install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-echo -e "${GREEN}[6/12]${NC} Installing EasyEffects..."
+echo -e "${GREEN}[6/13]${NC} Installing EasyEffects..."
 flatpak install -y --noninteractive flathub com.github.wwmm.easyeffects
 
-echo -e "${GREEN}[7/12]${NC} Installing bass presets..."
+echo -e "${GREEN}[7/13]${NC} Installing bass presets..."
 rfkill unblock bluetooth
 bash scripts/profiles.sh
 
-echo -e "${GREEN}[8/12]${NC} Configuring EasyEffects..."
+echo -e "${GREEN}[8/13]${NC} Configuring EasyEffects..."
 cp scripts/start-easyeffects.sh ~/start-easyeffects.sh
 cp scripts/start-easyeffects.service ~/.config/systemd/user/start-easyeffects.service
 systemctl --user daemon-reload
 systemctl --user enable start-easyeffects.service
 
-echo -e "${GREEN}[9/12]${NC} Enabling startup services..."
+echo -e "${GREEN}[9/13]${NC} Enabling startup services..."
 sudo loginctl enable-linger "$USER"
 
-echo -e "${GREEN}[10/12]${NC} Enabling EasyEffects local server..."
+echo -e "${GREEN}[10/13]${NC} Enabling EasyEffects local server..."
 grep -q "^enableLocalServer=true" ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc 2>/dev/null || cat >> ~/.var/app/com.github.wwmm.easyeffects/data/easyeffects/easyeffectsrc <<EOF
 [General]
 enableLocalServer=true
 EOF
 
-echo -e "${GREEN}[11/12]${NC} Installing DSP button support..."
+echo -e "${GREEN}[11/13]${NC} Installing DSP button support..."
 cp scripts/dsp_buttons.py ~/dsp_buttons.py
 cp scripts/dsp_buttons.service ~/.config/systemd/user/dsp_buttons.service
 systemctl --user daemon-reload
