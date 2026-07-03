@@ -81,7 +81,7 @@ sudo apt install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo -e "${GREEN}[6/13]${NC} Installing EasyEffects..."
-flatpak install -y --noninteractive flathub com.github.wwmm.easyeffects
+sudo flatpak install -y --noninteractive flathub com.github.wwmm.easyeffects
 
 echo -e "${GREEN}[7/13]${NC} Installing bass presets..."
 rfkill unblock bluetooth
